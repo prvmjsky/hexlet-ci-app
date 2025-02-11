@@ -3,7 +3,10 @@
     build:
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@v4
+        - name: checkout
+          uses: actions/checkout@v4
         - run: make setup
         - run: make test
         - run: make lint
+        - name: print hello from hexlet
+          uses: hexlet-components/hello-from-hexlet-action@release
